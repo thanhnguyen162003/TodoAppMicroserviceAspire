@@ -44,8 +44,7 @@ namespace User.App.ConnectedServiceClients.Catalogs
         /// </remarks>
         /// <returns>Created</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<CreateProductResponse> CreateProductAsync(CreateProductRequest body,
-            System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CreateProductResponse> CreateProductAsync(CreateProductRequest body, System.Threading.CancellationToken cancellationToken);
 
         /// <summary>
         /// Get products by page
@@ -55,8 +54,7 @@ namespace User.App.ConnectedServiceClients.Catalogs
         /// </remarks>
         /// <returns>OK</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<GetProductsByPageResponse> GetProductsByPageAsync(int? pageSize, int? pageNumber,
-            string filters, string sortOrder);
+        System.Threading.Tasks.Task<GetProductsByPageResponse> GetProductsByPageAsync(int? pageSize, int? pageNumber, string filters, string sortOrder);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <summary>
@@ -67,8 +65,7 @@ namespace User.App.ConnectedServiceClients.Catalogs
         /// </remarks>
         /// <returns>OK</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<GetProductsByPageResponse> GetProductsByPageAsync(int? pageSize, int? pageNumber,
-            string filters, string sortOrder, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GetProductsByPageResponse> GetProductsByPageAsync(int? pageSize, int? pageNumber, string filters, string sortOrder, System.Threading.CancellationToken cancellationToken);
 
         /// <summary>
         /// Get product by id
@@ -89,23 +86,20 @@ namespace User.App.ConnectedServiceClients.Catalogs
         /// </remarks>
         /// <returns>OK</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<GetProductByIdResponse> GetProductByIdAsync(System.Guid id,
-            System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GetProductByIdResponse> GetProductByIdAsync(System.Guid id, System.Threading.CancellationToken cancellationToken);
+
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class CatalogsConectedServiceApiClient : ICatalogsConectedServiceApiClient
     {
         private System.Net.Http.HttpClient _httpClient;
-
-        private static System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings =
-            new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(CreateSerializerSettings, true);
-
+        private static System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(CreateSerializerSettings, true);
         private Newtonsoft.Json.JsonSerializerSettings _instanceSettings;
 
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+    #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public CatalogsConectedServiceApiClient(System.Net.Http.HttpClient httpClient)
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+    #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             _httpClient = httpClient;
             Initialize();
@@ -118,21 +112,14 @@ namespace User.App.ConnectedServiceClients.Catalogs
             return settings;
         }
 
-        protected Newtonsoft.Json.JsonSerializerSettings JsonSerializerSettings
-        {
-            get { return _instanceSettings ?? _settings.Value; }
-        }
+        protected Newtonsoft.Json.JsonSerializerSettings JsonSerializerSettings { get { return _instanceSettings ?? _settings.Value; } }
 
         static partial void UpdateJsonSerializerSettings(Newtonsoft.Json.JsonSerializerSettings settings);
 
         partial void Initialize();
 
-        partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request,
-            string url);
-
-        partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request,
-            System.Text.StringBuilder urlBuilder);
-
+        partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request, string url);
+        partial void PrepareRequest(System.Net.Http.HttpClient client, System.Net.Http.HttpRequestMessage request, System.Text.StringBuilder urlBuilder);
         partial void ProcessResponse(System.Net.Http.HttpClient client, System.Net.Http.HttpResponseMessage response);
 
         /// <summary>
@@ -157,8 +144,7 @@ namespace User.App.ConnectedServiceClients.Catalogs
         /// </remarks>
         /// <returns>Created</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<CreateProductResponse> CreateProductAsync(
-            CreateProductRequest body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<CreateProductResponse> CreateProductAsync(CreateProductRequest body, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -168,15 +154,13 @@ namespace User.App.ConnectedServiceClients.Catalogs
                 {
                     var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, JsonSerializerSettings);
                     var content_ = new System.Net.Http.StringContent(json_);
-                    content_.Headers.ContentType =
-                        System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
                     request_.Content = content_;
                     request_.Method = new System.Net.Http.HttpMethod("POST");
-                    request_.Headers.Accept.Add(
-                        System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-
+                
                     // Operation Path: "api/v1/products"
                     urlBuilder_.Append("api/v1/products");
 
@@ -187,15 +171,11 @@ namespace User.App.ConnectedServiceClients.Catalogs
 
                     PrepareRequest(client_, request_, url_);
 
-                    var response_ = await client_.SendAsync(request_,
-                            System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-                        .ConfigureAwait(false);
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
                     var disposeResponse_ = true;
                     try
                     {
-                        var headers_ =
-                            new System.Collections.Generic.Dictionary<string,
-                                System.Collections.Generic.IEnumerable<string>>();
+                        var headers_ = new System.Collections.Generic.Dictionary<string, System.Collections.Generic.IEnumerable<string>>();
                         foreach (var item_ in response_.Headers)
                             headers_[item_.Key] = item_.Value;
                         if (response_.Content != null && response_.Content.Headers != null)
@@ -209,53 +189,37 @@ namespace User.App.ConnectedServiceClients.Catalogs
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 201)
                         {
-                            var objectResponse_ =
-                                await ReadObjectResponseAsync<CreateProductResponse>(response_, headers_,
-                                    cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<CreateProductResponse>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_,
-                                    objectResponse_.Text, headers_, null);
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
-
                             return objectResponse_.Object;
                         }
-                        else if (status_ == 400)
+                        else
+                        if (status_ == 400)
                         {
-                            var objectResponse_ =
-                                await ReadObjectResponseAsync<HttpValidationProblemDetails>(response_, headers_,
-                                    cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<HttpValidationProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_,
-                                    objectResponse_.Text, headers_, null);
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
-
-                            throw new ApiException<HttpValidationProblemDetails>("Bad Request", status_,
-                                objectResponse_.Text, headers_, objectResponse_.Object, null);
+                            throw new ApiException<HttpValidationProblemDetails>("Bad Request", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
                         }
-                        else if (status_ == 401)
+                        else
+                        if (status_ == 401)
                         {
-                            var objectResponse_ =
-                                await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken)
-                                    .ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_,
-                                    objectResponse_.Text, headers_, null);
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
-
-                            throw new ApiException<ProblemDetails>("Unauthorized", status_, objectResponse_.Text,
-                                headers_, objectResponse_.Object, null);
+                            throw new ApiException<ProblemDetails>("Unauthorized", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
                         }
                         else
                         {
-                            var responseData_ = response_.Content == null
-                                ? null
-                                : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            throw new ApiException(
-                                "The HTTP status code of the response was not expected (" + status_ + ").", status_,
-                                responseData_, headers_, null);
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -280,11 +244,9 @@ namespace User.App.ConnectedServiceClients.Catalogs
         /// </remarks>
         /// <returns>OK</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<GetProductsByPageResponse> GetProductsByPageAsync(int? pageSize,
-            int? pageNumber, string filters, string sortOrder)
+        public virtual System.Threading.Tasks.Task<GetProductsByPageResponse> GetProductsByPageAsync(int? pageSize, int? pageNumber, string filters, string sortOrder)
         {
-            return GetProductsByPageAsync(pageSize, pageNumber, filters, sortOrder,
-                System.Threading.CancellationToken.None);
+            return GetProductsByPageAsync(pageSize, pageNumber, filters, sortOrder, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -296,9 +258,7 @@ namespace User.App.ConnectedServiceClients.Catalogs
         /// </remarks>
         /// <returns>OK</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<GetProductsByPageResponse> GetProductsByPageAsync(
-            int? pageSize, int? pageNumber, string filters, string sortOrder,
-            System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<GetProductsByPageResponse> GetProductsByPageAsync(int? pageSize, int? pageNumber, string filters, string sortOrder, System.Threading.CancellationToken cancellationToken)
         {
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -307,42 +267,29 @@ namespace User.App.ConnectedServiceClients.Catalogs
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
                 {
                     request_.Method = new System.Net.Http.HttpMethod("GET");
-                    request_.Headers.Accept.Add(
-                        System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-
+                
                     // Operation Path: "api/v1/products"
                     urlBuilder_.Append("api/v1/products");
                     urlBuilder_.Append('?');
                     if (pageSize != null)
                     {
-                        urlBuilder_.Append(System.Uri.EscapeDataString("PageSize")).Append('=')
-                            .Append(System.Uri.EscapeDataString(ConvertToString(pageSize,
-                                System.Globalization.CultureInfo.InvariantCulture))).Append('&');
+                        urlBuilder_.Append(System.Uri.EscapeDataString("PageSize")).Append('=').Append(System.Uri.EscapeDataString(ConvertToString(pageSize, System.Globalization.CultureInfo.InvariantCulture))).Append('&');
                     }
-
                     if (pageNumber != null)
                     {
-                        urlBuilder_.Append(System.Uri.EscapeDataString("PageNumber")).Append('=')
-                            .Append(System.Uri.EscapeDataString(ConvertToString(pageNumber,
-                                System.Globalization.CultureInfo.InvariantCulture))).Append('&');
+                        urlBuilder_.Append(System.Uri.EscapeDataString("PageNumber")).Append('=').Append(System.Uri.EscapeDataString(ConvertToString(pageNumber, System.Globalization.CultureInfo.InvariantCulture))).Append('&');
                     }
-
                     if (filters != null)
                     {
-                        urlBuilder_.Append(System.Uri.EscapeDataString("Filters")).Append('=')
-                            .Append(System.Uri.EscapeDataString(ConvertToString(filters,
-                                System.Globalization.CultureInfo.InvariantCulture))).Append('&');
+                        urlBuilder_.Append(System.Uri.EscapeDataString("Filters")).Append('=').Append(System.Uri.EscapeDataString(ConvertToString(filters, System.Globalization.CultureInfo.InvariantCulture))).Append('&');
                     }
-
                     if (sortOrder != null)
                     {
-                        urlBuilder_.Append(System.Uri.EscapeDataString("SortOrder")).Append('=')
-                            .Append(System.Uri.EscapeDataString(ConvertToString(sortOrder,
-                                System.Globalization.CultureInfo.InvariantCulture))).Append('&');
+                        urlBuilder_.Append(System.Uri.EscapeDataString("SortOrder")).Append('=').Append(System.Uri.EscapeDataString(ConvertToString(sortOrder, System.Globalization.CultureInfo.InvariantCulture))).Append('&');
                     }
-
                     urlBuilder_.Length--;
 
                     PrepareRequest(client_, request_, urlBuilder_);
@@ -352,15 +299,11 @@ namespace User.App.ConnectedServiceClients.Catalogs
 
                     PrepareRequest(client_, request_, url_);
 
-                    var response_ = await client_.SendAsync(request_,
-                            System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-                        .ConfigureAwait(false);
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
                     var disposeResponse_ = true;
                     try
                     {
-                        var headers_ =
-                            new System.Collections.Generic.Dictionary<string,
-                                System.Collections.Generic.IEnumerable<string>>();
+                        var headers_ = new System.Collections.Generic.Dictionary<string, System.Collections.Generic.IEnumerable<string>>();
                         foreach (var item_ in response_.Headers)
                             headers_[item_.Key] = item_.Value;
                         if (response_.Content != null && response_.Content.Headers != null)
@@ -374,39 +317,27 @@ namespace User.App.ConnectedServiceClients.Catalogs
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ =
-                                await ReadObjectResponseAsync<GetProductsByPageResponse>(response_, headers_,
-                                    cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<GetProductsByPageResponse>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_,
-                                    objectResponse_.Text, headers_, null);
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
-
                             return objectResponse_.Object;
                         }
-                        else if (status_ == 400)
+                        else
+                        if (status_ == 400)
                         {
-                            var objectResponse_ =
-                                await ReadObjectResponseAsync<HttpValidationProblemDetails>(response_, headers_,
-                                    cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<HttpValidationProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_,
-                                    objectResponse_.Text, headers_, null);
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
-
-                            throw new ApiException<HttpValidationProblemDetails>("Bad Request", status_,
-                                objectResponse_.Text, headers_, objectResponse_.Object, null);
+                            throw new ApiException<HttpValidationProblemDetails>("Bad Request", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
                         }
                         else
                         {
-                            var responseData_ = response_.Content == null
-                                ? null
-                                : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            throw new ApiException(
-                                "The HTTP status code of the response was not expected (" + status_ + ").", status_,
-                                responseData_, headers_, null);
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -445,8 +376,7 @@ namespace User.App.ConnectedServiceClients.Catalogs
         /// </remarks>
         /// <returns>OK</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<GetProductByIdResponse> GetProductByIdAsync(System.Guid id,
-            System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<GetProductByIdResponse> GetProductByIdAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
         {
             if (id == null)
                 throw new System.ArgumentNullException("id");
@@ -458,15 +388,13 @@ namespace User.App.ConnectedServiceClients.Catalogs
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
                 {
                     request_.Method = new System.Net.Http.HttpMethod("GET");
-                    request_.Headers.Accept.Add(
-                        System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("application/json"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-
+                
                     // Operation Path: "api/v1/products/{id}"
                     urlBuilder_.Append("api/v1/products/");
-                    urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(id,
-                        System.Globalization.CultureInfo.InvariantCulture)));
+                    urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
 
                     PrepareRequest(client_, request_, urlBuilder_);
 
@@ -475,15 +403,11 @@ namespace User.App.ConnectedServiceClients.Catalogs
 
                     PrepareRequest(client_, request_, url_);
 
-                    var response_ = await client_.SendAsync(request_,
-                            System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-                        .ConfigureAwait(false);
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
                     var disposeResponse_ = true;
                     try
                     {
-                        var headers_ =
-                            new System.Collections.Generic.Dictionary<string,
-                                System.Collections.Generic.IEnumerable<string>>();
+                        var headers_ = new System.Collections.Generic.Dictionary<string, System.Collections.Generic.IEnumerable<string>>();
                         foreach (var item_ in response_.Headers)
                             headers_[item_.Key] = item_.Value;
                         if (response_.Content != null && response_.Content.Headers != null)
@@ -497,53 +421,37 @@ namespace User.App.ConnectedServiceClients.Catalogs
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ =
-                                await ReadObjectResponseAsync<GetProductByIdResponse>(response_, headers_,
-                                    cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<GetProductByIdResponse>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_,
-                                    objectResponse_.Text, headers_, null);
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
-
                             return objectResponse_.Object;
                         }
-                        else if (status_ == 400)
+                        else
+                        if (status_ == 400)
                         {
-                            var objectResponse_ =
-                                await ReadObjectResponseAsync<HttpValidationProblemDetails>(response_, headers_,
-                                    cancellationToken).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<HttpValidationProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_,
-                                    objectResponse_.Text, headers_, null);
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
-
-                            throw new ApiException<HttpValidationProblemDetails>("Bad Request", status_,
-                                objectResponse_.Text, headers_, objectResponse_.Object, null);
+                            throw new ApiException<HttpValidationProblemDetails>("Bad Request", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
                         }
-                        else if (status_ == 404)
+                        else
+                        if (status_ == 404)
                         {
-                            var objectResponse_ =
-                                await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken)
-                                    .ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_, cancellationToken).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
-                                throw new ApiException("Response was null which was not expected.", status_,
-                                    objectResponse_.Text, headers_, null);
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
-
-                            throw new ApiException<ProblemDetails>("Not Found", status_, objectResponse_.Text, headers_,
-                                objectResponse_.Object, null);
+                            throw new ApiException<ProblemDetails>("Not Found", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
                         }
                         else
                         {
-                            var responseData_ = response_.Content == null
-                                ? null
-                                : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
-                            throw new ApiException(
-                                "The HTTP status code of the response was not expected (" + status_ + ").", status_,
-                                responseData_, headers_, null);
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
                         }
                     }
                     finally
@@ -575,10 +483,7 @@ namespace User.App.ConnectedServiceClients.Catalogs
 
         public bool ReadResponseAsString { get; set; }
 
-        protected virtual async System.Threading.Tasks.Task<ObjectResponseResult<T>> ReadObjectResponseAsync<T>(
-            System.Net.Http.HttpResponseMessage response,
-            System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>>
-                headers, System.Threading.CancellationToken cancellationToken)
+        protected virtual async System.Threading.Tasks.Task<ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken)
         {
             if (response == null || response.Content == null)
             {
@@ -590,8 +495,7 @@ namespace User.App.ConnectedServiceClients.Catalogs
                 var responseText = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    var typedBody =
-                        Newtonsoft.Json.JsonConvert.DeserializeObject<T>(responseText, JsonSerializerSettings);
+                    var typedBody = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(responseText, JsonSerializerSettings);
                     return new ObjectResponseResult<T>(typedBody, responseText);
                 }
                 catch (Newtonsoft.Json.JsonException exception)
@@ -633,12 +537,10 @@ namespace User.App.ConnectedServiceClients.Catalogs
                 var name = System.Enum.GetName(value.GetType(), value);
                 if (name != null)
                 {
-                    var field = System.Reflection.IntrospectionExtensions.GetTypeInfo(value.GetType())
-                        .GetDeclaredField(name);
+                    var field = System.Reflection.IntrospectionExtensions.GetTypeInfo(value.GetType()).GetDeclaredField(name);
                     if (field != null)
                     {
-                        var attribute = System.Reflection.CustomAttributeExtensions.GetCustomAttribute(field,
-                                typeof(System.Runtime.Serialization.EnumMemberAttribute))
+                        var attribute = System.Reflection.CustomAttributeExtensions.GetCustomAttribute(field, typeof(System.Runtime.Serialization.EnumMemberAttribute)) 
                             as System.Runtime.Serialization.EnumMemberAttribute;
                         if (attribute != null)
                         {
@@ -646,18 +548,17 @@ namespace User.App.ConnectedServiceClients.Catalogs
                         }
                     }
 
-                    var converted = System.Convert.ToString(System.Convert.ChangeType(value,
-                        System.Enum.GetUnderlyingType(value.GetType()), cultureInfo));
+                    var converted = System.Convert.ToString(System.Convert.ChangeType(value, System.Enum.GetUnderlyingType(value.GetType()), cultureInfo));
                     return converted == null ? string.Empty : converted;
                 }
             }
-            else if (value is bool)
+            else if (value is bool) 
             {
                 return System.Convert.ToString((bool)value, cultureInfo).ToLowerInvariant();
             }
             else if (value is byte[])
             {
-                return System.Convert.ToBase64String((byte[])value);
+                return System.Convert.ToBase64String((byte[]) value);
             }
             else if (value is string[])
             {
@@ -671,7 +572,6 @@ namespace User.App.ConnectedServiceClients.Catalogs
                 {
                     valueTextArray[i] = ConvertToString(valueArray.GetValue(i), cultureInfo);
                 }
-
                 return string.Join(",", valueTextArray);
             }
 
@@ -680,14 +580,15 @@ namespace User.App.ConnectedServiceClients.Catalogs
         }
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class CreateProductRequest
     {
         [Newtonsoft.Json.JsonConstructor]
+
         public CreateProductRequest(System.Guid @categoryId, string @description, string @name, double @price)
 
         {
+
             this.Name = @name;
 
             this.CategoryId = @categoryId;
@@ -695,9 +596,8 @@ namespace User.App.ConnectedServiceClients.Catalogs
             this.Price = @price;
 
             this.Description = @description;
-        }
 
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.AllowNull)]
+        }    [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.AllowNull)]
         public string Name { get; }
 
         [Newtonsoft.Json.JsonProperty("categoryId", Required = Newtonsoft.Json.Required.Always)]
@@ -715,27 +615,24 @@ namespace User.App.ConnectedServiceClients.Catalogs
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
-            get
-            {
-                return _additionalProperties ??
-                       (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>());
-            }
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
             set { _additionalProperties = value; }
         }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class CreateProductResponse
     {
         [Newtonsoft.Json.JsonConstructor]
+
         public CreateProductResponse(System.Guid @id)
 
         {
-            this.Id = @id;
-        }
 
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
+            this.Id = @id;
+
+        }    [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public System.Guid Id { get; }
 
@@ -744,27 +641,24 @@ namespace User.App.ConnectedServiceClients.Catalogs
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
-            get
-            {
-                return _additionalProperties ??
-                       (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>());
-            }
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
             set { _additionalProperties = value; }
         }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class GetProductByIdResponse
     {
         [Newtonsoft.Json.JsonConstructor]
+
         public GetProductByIdResponse(ProductDto @product)
 
         {
-            this.Product = @product;
-        }
 
-        [Newtonsoft.Json.JsonProperty("product", Required = Newtonsoft.Json.Required.Always)]
+            this.Product = @product;
+
+        }    [Newtonsoft.Json.JsonProperty("product", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public ProductDto Product { get; }
 
@@ -773,27 +667,24 @@ namespace User.App.ConnectedServiceClients.Catalogs
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
-            get
-            {
-                return _additionalProperties ??
-                       (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>());
-            }
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
             set { _additionalProperties = value; }
         }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class GetProductsByPageResponse
     {
         [Newtonsoft.Json.JsonConstructor]
+
         public GetProductsByPageResponse(IPageListOfProductDto @products)
 
         {
-            this.Products = @products;
-        }
 
-        [Newtonsoft.Json.JsonProperty("products", Required = Newtonsoft.Json.Required.Always)]
+            this.Products = @products;
+
+        }    [Newtonsoft.Json.JsonProperty("products", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public IPageListOfProductDto Products { get; }
 
@@ -802,25 +693,21 @@ namespace User.App.ConnectedServiceClients.Catalogs
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
-            get
-            {
-                return _additionalProperties ??
-                       (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>());
-            }
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
             set { _additionalProperties = value; }
         }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class HttpValidationProblemDetails
     {
         [Newtonsoft.Json.JsonConstructor]
-        public HttpValidationProblemDetails(string @detail,
-            System.Collections.Generic.IDictionary<string, System.Collections.Generic.ICollection<string>> @errors,
-            string @instance, int? @status, string @title, string @type)
+
+        public HttpValidationProblemDetails(string @detail, System.Collections.Generic.IDictionary<string, System.Collections.Generic.ICollection<string>> @errors, string @instance, int? @status, string @title, string @type)
 
         {
+
             this.Type = @type;
 
             this.Title = @title;
@@ -832,59 +719,45 @@ namespace User.App.ConnectedServiceClients.Catalogs
             this.Instance = @instance;
 
             this.Errors = @errors;
-        }
 
-        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        }    [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Type { get; }
 
-        [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Title { get; }
 
-        [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Status { get; }
 
-        [Newtonsoft.Json.JsonProperty("detail", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("detail", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Detail { get; }
 
-        [Newtonsoft.Json.JsonProperty("instance", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("instance", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Instance { get; }
 
-        [Newtonsoft.Json.JsonProperty("errors", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.IDictionary<string, System.Collections.Generic.ICollection<string>> Errors
-        {
-            get;
-        }
+        [Newtonsoft.Json.JsonProperty("errors", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.IDictionary<string, System.Collections.Generic.ICollection<string>> Errors { get; }
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
 
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
-            get
-            {
-                return _additionalProperties ??
-                       (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>());
-            }
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
             set { _additionalProperties = value; }
         }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class IPageListOfProductDto
     {
         [Newtonsoft.Json.JsonConstructor]
-        public IPageListOfProductDto(int @currentEndIndex, int @currentPageSize, int @currentStartIndex, bool @hasNext,
-            bool @hasPrevious, System.Collections.Generic.ICollection<ProductDto> @items, int @pageNumber,
-            int @pageSize, int @totalCount, int @totalPages)
+
+        public IPageListOfProductDto(int @currentEndIndex, int @currentPageSize, int @currentStartIndex, bool @hasNext, bool @hasPrevious, System.Collections.Generic.ICollection<ProductDto> @items, int @pageNumber, int @pageSize, int @totalCount, int @totalPages)
 
         {
+
             this.CurrentPageSize = @currentPageSize;
 
             this.CurrentStartIndex = @currentStartIndex;
@@ -904,46 +777,35 @@ namespace User.App.ConnectedServiceClients.Catalogs
             this.PageNumber = @pageNumber;
 
             this.PageSize = @pageSize;
-        }
 
-        [Newtonsoft.Json.JsonProperty("currentPageSize", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        }    [Newtonsoft.Json.JsonProperty("currentPageSize", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int CurrentPageSize { get; }
 
-        [Newtonsoft.Json.JsonProperty("currentStartIndex", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("currentStartIndex", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int CurrentStartIndex { get; }
 
-        [Newtonsoft.Json.JsonProperty("currentEndIndex", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("currentEndIndex", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int CurrentEndIndex { get; }
 
-        [Newtonsoft.Json.JsonProperty("totalPages", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalPages", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int TotalPages { get; }
 
-        [Newtonsoft.Json.JsonProperty("hasPrevious", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("hasPrevious", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool HasPrevious { get; }
 
-        [Newtonsoft.Json.JsonProperty("hasNext", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("hasNext", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool HasNext { get; }
 
-        [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ProductDto> Items { get; }
 
-        [Newtonsoft.Json.JsonProperty("totalCount", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("totalCount", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int TotalCount { get; }
 
-        [Newtonsoft.Json.JsonProperty("pageNumber", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("pageNumber", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int PageNumber { get; }
 
-        [Newtonsoft.Json.JsonProperty("pageSize", Required = Newtonsoft.Json.Required.DisallowNull,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("pageSize", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int PageSize { get; }
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
@@ -951,23 +813,21 @@ namespace User.App.ConnectedServiceClients.Catalogs
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
-            get
-            {
-                return _additionalProperties ??
-                       (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>());
-            }
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
             set { _additionalProperties = value; }
         }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class ProblemDetails
     {
         [Newtonsoft.Json.JsonConstructor]
+
         public ProblemDetails(string @detail, string @instance, int? @status, string @title, string @type)
 
         {
+
             this.Type = @type;
 
             this.Title = @title;
@@ -977,26 +837,20 @@ namespace User.App.ConnectedServiceClients.Catalogs
             this.Detail = @detail;
 
             this.Instance = @instance;
-        }
 
-        [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        }    [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Type { get; }
 
-        [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Title { get; }
 
-        [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int? Status { get; }
 
-        [Newtonsoft.Json.JsonProperty("detail", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("detail", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Detail { get; }
 
-        [Newtonsoft.Json.JsonProperty("instance", Required = Newtonsoft.Json.Required.Default,
-            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [Newtonsoft.Json.JsonProperty("instance", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Instance { get; }
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
@@ -1004,23 +858,21 @@ namespace User.App.ConnectedServiceClients.Catalogs
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
-            get
-            {
-                return _additionalProperties ??
-                       (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>());
-            }
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
             set { _additionalProperties = value; }
         }
+
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema",
-        "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class ProductDto
     {
         [Newtonsoft.Json.JsonConstructor]
+
         public ProductDto(System.Guid @categoryId, string @description, System.Guid @id, string @name, double @price)
 
         {
+
             this.Id = @id;
 
             this.CategoryId = @categoryId;
@@ -1030,9 +882,8 @@ namespace User.App.ConnectedServiceClients.Catalogs
             this.Price = @price;
 
             this.Description = @description;
-        }
 
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
+        }    [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public System.Guid Id { get; }
 
@@ -1055,14 +906,12 @@ namespace User.App.ConnectedServiceClients.Catalogs
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
-            get
-            {
-                return _additionalProperties ??
-                       (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>());
-            }
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
             set { _additionalProperties = value; }
         }
+
     }
+
 
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
@@ -1072,16 +921,10 @@ namespace User.App.ConnectedServiceClients.Catalogs
 
         public string Response { get; private set; }
 
-        public System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>>
-            Headers { get; private set; }
+        public System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> Headers { get; private set; }
 
-        public ApiException(string message, int statusCode, string response,
-            System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>>
-                headers, System.Exception innerException)
-            : base(
-                message + "\n\nStatus: " + statusCode + "\nResponse: \n" + ((response == null)
-                    ? "(null)"
-                    : response.Substring(0, response.Length >= 512 ? 512 : response.Length)), innerException)
+        public ApiException(string message, int statusCode, string response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Exception innerException)
+            : base(message + "\n\nStatus: " + statusCode + "\nResponse: \n" + ((response == null) ? "(null)" : response.Substring(0, response.Length >= 512 ? 512 : response.Length)), innerException)
         {
             StatusCode = statusCode;
             Response = response;
@@ -1099,14 +942,13 @@ namespace User.App.ConnectedServiceClients.Catalogs
     {
         public TResult Result { get; private set; }
 
-        public ApiException(string message, int statusCode, string response,
-            System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>>
-                headers, TResult result, System.Exception innerException)
+        public ApiException(string message, int statusCode, string response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, TResult result, System.Exception innerException)
             : base(message, statusCode, response, headers, innerException)
         {
             Result = result;
         }
     }
+
 }
 
 #pragma warning restore  108

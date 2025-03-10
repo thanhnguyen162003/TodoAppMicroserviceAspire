@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Vertical Slice Template",
-    "description": "Vertical Slice Template<h4>Additional Information</h4>",
+    "title": "Vertical Slice",
+    "description": "Vertical Slice<h4>Additional Information</h4>",
     "contact": {
       "name": "test",
       "email": "test@test.com"

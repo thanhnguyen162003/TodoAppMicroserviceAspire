@@ -10,31 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9BB0311A-FE2
 		src\Directory.Packages.props = src\Directory.Packages.props
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C4B80800-5430-4D4E-B473-261157D54CD4}"
-	ProjectSection(SolutionItems) = preProject
-		tests\Directory.Build.props = tests\Directory.Build.props
-		tests\Directory.Packages.props = tests\Directory.Packages.props
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.App.EndToEndTests", "tests\User.App.EndToEndTests\User.App.EndToEndTests.csproj", "{5F41BF51-E13B-48BF-8D81-874FBA9BC961}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.App.UnitTests", "tests\User.App.UnitTests\User.App.UnitTests.csproj", "{4CCD199C-1C58-4C6E-963A-3A37CA9FB532}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.App.IntegrationTests", "tests\User.App.IntegrationTests\User.App.IntegrationTests.csproj", "{7C503960-D3B3-4A19-9742-8D5CA8C84370}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.App.ContractTests", "tests\User.App.ContractTests\User.App.ContractTests.csproj", "{70A7C0CD-C771-4942-BC74-B267AAACFF43}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.App.TestsShared", "tests\User.App.TestsShared\User.App.TestsShared.csproj", "{E3C9B67C-8443-49C9-A6F3-EA099199F66F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-items", "solution-items", "{798579C1-7DEC-47A2-9C18-CA3DBE4A6573}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.csharpierrc.yaml = .csharpierrc.yaml
 		global.json = global.json
 		package.json = package.json
-		readme.md = readme.md
 		version.json = version.json
-		vertical-slice-template.nuspec = vertical-slice-template.nuspec
 		.dockerignore = .dockerignore
 	EndProjectSection
 EndProject
@@ -42,10 +24,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{154A
 	ProjectSection(SolutionItems) = preProject
 		.config\dotnet-tools.json = .config\dotnet-tools.json
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.App.ClientsTests", "tests\User.App.ClientsTests\User.App.ClientsTests.csproj", "{4E185D04-8B8D-4BE9-AAE3-5406C703DF83}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.App.DependencyTests", "tests\User.App.DependencyTests\User.App.DependencyTests.csproj", "{A79D441C-D450-474E-9CFC-008335A80B13}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{AEFEEF63-5831-49E5-A7D9-892AF653C32D}"
 	ProjectSection(SolutionItems) = preProject
@@ -183,14 +161,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5F41BF51-E13B-48BF-8D81-874FBA9BC961} = {C4B80800-5430-4D4E-B473-261157D54CD4}
-		{4CCD199C-1C58-4C6E-963A-3A37CA9FB532} = {C4B80800-5430-4D4E-B473-261157D54CD4}
-		{7C503960-D3B3-4A19-9742-8D5CA8C84370} = {C4B80800-5430-4D4E-B473-261157D54CD4}
-		{70A7C0CD-C771-4942-BC74-B267AAACFF43} = {C4B80800-5430-4D4E-B473-261157D54CD4}
-		{E3C9B67C-8443-49C9-A6F3-EA099199F66F} = {C4B80800-5430-4D4E-B473-261157D54CD4}
 		{154A55C1-CE45-463D-B411-816C702D6A25} = {798579C1-7DEC-47A2-9C18-CA3DBE4A6573}
-		{4E185D04-8B8D-4BE9-AAE3-5406C703DF83} = {C4B80800-5430-4D4E-B473-261157D54CD4}
-		{A79D441C-D450-474E-9CFC-008335A80B13} = {C4B80800-5430-4D4E-B473-261157D54CD4}
 		{AEFEEF63-5831-49E5-A7D9-892AF653C32D} = {798579C1-7DEC-47A2-9C18-CA3DBE4A6573}
 		{ED6C6F59-8A39-4D7D-BB93-888AA486AFE9} = {AEFEEF63-5831-49E5-A7D9-892AF653C32D}
 		{268E2B03-D9F4-4D31-84BA-6D1DC250E894} = {798579C1-7DEC-47A2-9C18-CA3DBE4A6573}
@@ -216,34 +187,6 @@ Global
 		{8370F7CF-C190-4982-8F1D-3A7206326BDD} = {99A01789-D45F-483B-9418-E94181E8C199}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5F41BF51-E13B-48BF-8D81-874FBA9BC961}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F41BF51-E13B-48BF-8D81-874FBA9BC961}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F41BF51-E13B-48BF-8D81-874FBA9BC961}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F41BF51-E13B-48BF-8D81-874FBA9BC961}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4CCD199C-1C58-4C6E-963A-3A37CA9FB532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4CCD199C-1C58-4C6E-963A-3A37CA9FB532}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4CCD199C-1C58-4C6E-963A-3A37CA9FB532}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4CCD199C-1C58-4C6E-963A-3A37CA9FB532}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7C503960-D3B3-4A19-9742-8D5CA8C84370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C503960-D3B3-4A19-9742-8D5CA8C84370}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C503960-D3B3-4A19-9742-8D5CA8C84370}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C503960-D3B3-4A19-9742-8D5CA8C84370}.Release|Any CPU.Build.0 = Release|Any CPU
-		{70A7C0CD-C771-4942-BC74-B267AAACFF43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70A7C0CD-C771-4942-BC74-B267AAACFF43}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70A7C0CD-C771-4942-BC74-B267AAACFF43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70A7C0CD-C771-4942-BC74-B267AAACFF43}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E3C9B67C-8443-49C9-A6F3-EA099199F66F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E3C9B67C-8443-49C9-A6F3-EA099199F66F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E3C9B67C-8443-49C9-A6F3-EA099199F66F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E3C9B67C-8443-49C9-A6F3-EA099199F66F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4E185D04-8B8D-4BE9-AAE3-5406C703DF83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E185D04-8B8D-4BE9-AAE3-5406C703DF83}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E185D04-8B8D-4BE9-AAE3-5406C703DF83}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E185D04-8B8D-4BE9-AAE3-5406C703DF83}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A79D441C-D450-474E-9CFC-008335A80B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A79D441C-D450-474E-9CFC-008335A80B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A79D441C-D450-474E-9CFC-008335A80B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A79D441C-D450-474E-9CFC-008335A80B13}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AC478225-5EA9-4895-875A-0B01217C4576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AC478225-5EA9-4895-875A-0B01217C4576}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC478225-5EA9-4895-875A-0B01217C4576}.Release|Any CPU.ActiveCfg = Release|Any CPU
