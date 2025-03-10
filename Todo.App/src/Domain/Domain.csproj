@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <RootNamespace>Todo.App.Domain</RootNamespace>
+        <AssemblyName>Todo.App.Domain</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MediatR"/>
+    </ItemGroup>
+
+</Project>
